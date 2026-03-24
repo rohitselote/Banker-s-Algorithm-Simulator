@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Banker's Algorithm - ATM Resource Allocation</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="header">
+    <h1>Banker's Algorithm Simulator</h1>
+    <p>ATM network style resource allocation &amp; deadlock avoidance</p>
+  </header>
+
+  <main class="container">
+    <section class="panel">
+      <h2>System Configuration</h2>
+      <div class="config-row">
+        <div>
+          <label for="numProcesses">Processes (ATM sessions)</label>
+          <input id="numProcesses" type="number" min="1" max="10" value="5" />
+        </div>
+        <div>
+          <label for="numResources">Resource types</label>
+          <input id="numResources" type="number" min="1" max="5" value="3" />
+        </div>
+        <button id="initSystem" class="btn primary">Initialize System</button>
+      </div>
+      <p class="hint">
+        Example interpretation: resources could be <strong>cash units</strong>, <strong>network links</strong>, or <strong>DB connections</strong>.
+      </p>
+    </section>
+
+    <section class="panel">
+      <h2>Matrices (Max, Allocation, Need) &amp; Available</h2>
+      <div id="matricesArea" class="matrices-area"></div>
+    </section>
+
+    <section class="panel">
+      <h2>Make a Resource Request</h2>
+      <form id="requestForm" class="request-form">
+        <div class="request-row">
+          <div>
+            <label for="reqProcess">Process index</label>
+            <input id="reqProcess" type="number" min="0" value="0" />
+          </div>
+          <div class="request-vector">
+            <label>Request vector</label>
+            <div id="requestInputs"></div>
+          </div>
+        </div>
+        <button type="submit" class="btn accent">Request Resources</button>
+      </form>
+      <p class="hint">The simulator will only grant requests that keep the system in a <strong>safe state</strong>.</p>
+    </section>
+
+    <section class="panel">
+      <h2>Log</h2>
+      <div id="log" class="log"></div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <small>Simulates Banker's Algorithm to keep the ATM network free of deadlocks while maximizing throughput.</small>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
