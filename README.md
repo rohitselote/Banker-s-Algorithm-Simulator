@@ -37,8 +37,8 @@ This web app demonstrates how resource requests are granted only when the system
 1. Clone this repository:
 
    ```bash
-   git clone https://github.com/<your-username>/<your-repo-name>.git
-   cd <your-repo-name>
+   git clone https://github.com/rohitselote/Banker-s-Algorithm-Simulator.git
+   cd Banker-s-Algorithm-Simulator
    ```
 
 2. Open `index.html` in your browser.
